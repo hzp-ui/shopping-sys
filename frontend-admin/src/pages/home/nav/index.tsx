@@ -83,7 +83,12 @@ function NavList() {
       key: 'icon',
       width: 100,
       render: (icon: string) => (
-        <Image width={40} height={40} src={icon} />
+        <Image
+          width={40}
+          height={40}
+          src={icon}
+          fallback="https://picsum.photos/40/40"
+        />
       ),
     },
     {
