@@ -1,0 +1,87 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: yunmu-shopping
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:shopping;DB_CLOSE_DELAY=-1;MODE=MySQL;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+    hikari:
+      minimum-idle: 2
+      maximum-pool-size: 10
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      database: 0
+      timeout: 2000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:sql/schema-h2.sql
+      encoding: UTF-8
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.yunmu.shopping.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+knife4j:
+  enable: true
+  openapi:
+    title: 云亩商城API文档
+    description: 全平台分销商城系统API接口文档
+    version: 1.0.0
+    concat: yunmu
+    group:
+      default:
+        group-name: 默认分组
+        api-rule: package
+        api-rule-resources:
+          - com.yunmu.shopping.controller
+
+jwt:
+  secret: yunmu-shopping-secret-key-2024-very-long-secret-key-for-jwt-token-generation
+  expiration: 86400000
+  header: Authorization
+  prefix: Bearer
+
+file:
+  upload:
+    path: ./uploads
+    url-prefix: /uploads
+
+logging:
+  level:
+    com.yunmu.shopping: info
+    org.springframework.security: warn

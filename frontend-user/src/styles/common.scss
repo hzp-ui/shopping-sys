@@ -1,0 +1,120 @@
+/* 全局样式变量 */
+page {
+  --primary-color: #ff6b00;
+  --success-color: #00b894;
+  --warning-color: #fdcb6e;
+  --danger-color: #ff4757;
+  --text-color: #333;
+  --text-color-secondary: #666;
+  --text-color-placeholder: #999;
+  --border-color: #eee;
+  --bg-color: #f5f5f5;
+  --white: #fff;
+}
+
+/* 通用样式 */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.mt-10 {
+  margin-top: 10rpx;
+}
+
+.mt-20 {
+  margin-top: 20rpx;
+}
+
+.mt-30 {
+  margin-top: 30rpx;
+}
+
+.mb-10 {
+  margin-bottom: 10rpx;
+}
+
+.mb-20 {
+  margin-bottom: 20rpx;
+}
+
+.mb-30 {
+  margin-bottom: 30rpx;
+}
+
+.p-20 {
+  padding: 20rpx;
+}
+
+.p-30 {
+  padding: 30rpx;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-success {
+  color: var(--success-color);
+}
+
+.text-danger {
+  color: var(--danger-color);
+}
+
+.text-secondary {
+  color: var(--text-color-secondary);
+}
+
+.text-placeholder {
+  color: var(--text-color-placeholder);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.bg-gray {
+  background-color: var(--bg-color);
+}
+
+.rounded {
+  border-radius: 12rpx;
+}
+
+.rounded-full {
+  border-radius: 50%;
+}

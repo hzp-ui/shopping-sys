@@ -1,0 +1,37 @@
+# 编译输出
+target/
+dist/
+build/
+
+# 依赖
+node_modules/
+
+# 日志
+*.log
+logs/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# 上传文件
+uploads/
+data/
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+*.swo
