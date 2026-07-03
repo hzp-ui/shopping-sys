@@ -1,0 +1,337 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationBarTitleText": "匹诺商城",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/category/index",
+      "style": {
+        "navigationBarTitleText": "商品分类"
+      }
+    },
+    {
+      "path": "pages/cart/index",
+      "style": {
+        "navigationBarTitleText": "购物车"
+      }
+    },
+    {
+      "path": "pages/mine/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/goods/detail",
+      "style": {
+        "navigationBarTitleText": "商品详情"
+      }
+    },
+    {
+      "path": "pages/goods/list",
+      "style": {
+        "navigationBarTitleText": "商品列表"
+      }
+    },
+    {
+      "path": "pages/order/confirm",
+      "style": {
+        "navigationBarTitleText": "确认订单"
+      }
+    },
+    {
+      "path": "pages/order/list",
+      "style": {
+        "navigationBarTitleText": "我的订单"
+      }
+    },
+    {
+      "path": "pages/order/review",
+      "style": {
+        "navigationBarTitleText": "发表评价"
+      }
+    },
+    {
+      "path": "pages/order/refund",
+      "style": {
+        "navigationBarTitleText": "申请售后"
+      }
+    },
+    {
+      "path": "pages/order/aftersale",
+      "style": {
+        "navigationBarTitleText": "退款/售后"
+      }
+    },
+    {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录注册"
+      }
+    },
+    {
+      "path": "pages/profile/index",
+      "style": {
+        "navigationBarTitleText": "个人中心"
+      }
+    },
+    {
+      "path": "pages/address/index",
+      "style": {
+        "navigationBarTitleText": "收货地址"
+      }
+    },
+    {
+      "path": "pages/coupon/index",
+      "style": {
+        "navigationBarTitleText": "我的优惠券"
+      }
+    },
+    {
+      "path": "pages/favorite/index",
+      "style": {
+        "navigationBarTitleText": "我的收藏"
+      }
+    },
+    {
+      "path": "pages/footprint/index",
+      "style": {
+        "navigationBarTitleText": "浏览足迹"
+      }
+    },
+    {
+      "path": "pages/points/index",
+      "style": {
+        "navigationBarTitleText": "积分商城"
+      }
+    },
+    {
+      "path": "pages/service/index",
+      "style": {
+        "navigationBarTitleText": "客服中心"
+      }
+    },
+    {
+      "path": "pages/setting/index",
+      "style": {
+        "navigationBarTitleText": "设置"
+      }
+    },
+    {
+      "path": "pages/about/index",
+      "style": {
+        "navigationBarTitleText": "关于我们"
+      }
+    },
+    {
+      "path": "pages/search/index",
+      "style": {
+        "navigationBarTitleText": "搜索",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/feature/new",
+      "style": {
+        "navigationBarTitleText": "新品首发",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/feature/seckill",
+      "style": {
+        "navigationBarTitleText": "限时秒杀",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/feature/group",
+      "style": {
+        "navigationBarTitleText": "拼团优惠",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/feature/distribution",
+      "style": {
+        "navigationBarTitleText": "分销专区",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/feature/coupon",
+      "style": {
+        "navigationBarTitleText": "领券中心",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/feature/signin",
+      "style": {
+        "navigationBarTitleText": "签到送礼",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/feature/store",
+      "style": {
+        "navigationBarTitleText": "附近门店",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/feature/vip",
+      "style": {
+        "navigationBarTitleText": "会员中心",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/wallet/index",
+      "style": {
+        "navigationBarTitleText": "我的钱包",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/wallet/recharge",
+      "style": {
+        "navigationBarTitleText": "充值记录",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/wallet/withdraw",
+      "style": {
+        "navigationBarTitleText": "提现申请",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/wallet/withdraw-record",
+      "style": {
+        "navigationBarTitleText": "提现记录",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/invoice/index",
+      "style": {
+        "navigationBarTitleText": "发票中心",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/invoice/detail",
+      "style": {
+        "navigationBarTitleText": "发票详情",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/invoice/apply",
+      "style": {
+        "navigationBarTitleText": "申请开票",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/order/logistics",
+      "style": {
+        "navigationBarTitleText": "物流详情",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/distribution/center",
+      "style": {
+        "navigationBarTitleText": "分销中心",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/distribution/orders",
+      "style": {
+        "navigationBarTitleText": "分销订单",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/distribution/commission",
+      "style": {
+        "navigationBarTitleText": "佣金明细",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/distribution/withdraw",
+      "style": {
+        "navigationBarTitleText": "提现申请",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/feature/store-detail",
+      "style": {
+        "navigationBarTitleText": "门店详情",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/points/rules",
+      "style": {
+        "navigationBarTitleText": "积分规则",
+        "navigationStyle": "custom"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "匹诺商城",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f5f5f5"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#ff6b00",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "iconPath": "static/tabbar/category.png",
+        "selectedIconPath": "static/tabbar/category-active.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/index",
+        "iconPath": "static/tabbar/cart.png",
+        "selectedIconPath": "static/tabbar/cart-active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "static/tabbar/mine.png",
+        "selectedIconPath": "static/tabbar/mine-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+    }
+  }
+}
