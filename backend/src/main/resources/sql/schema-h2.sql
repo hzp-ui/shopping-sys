@@ -606,14 +606,14 @@ INSERT INTO banner (title, image, link_type, link_url, sort) VALUES
 
 -- 首页导航
 INSERT INTO home_nav (name, icon, link_type, sort) VALUES
-('新品首发', 'https://picsum.photos/id/101/100/100', 1, 1),
-('限时秒杀', 'https://picsum.photos/id/102/100/100', 1, 2),
-('拼团优惠', 'https://picsum.photos/id/103/100/100', 1, 3),
-('分销专区', 'https://picsum.photos/id/104/100/100', 1, 4),
-('领券中心', 'https://picsum.photos/id/105/100/100', 1, 5),
-('签到送礼', 'https://picsum.photos/id/106/100/100', 1, 6),
-('附近门店', 'https://picsum.photos/id/107/100/100', 1, 7),
-('会员中心', 'https://picsum.photos/id/108/100/100', 1, 8);
+('新品首发', 'https://picsum.photos/seed/newproduct/100/100', 1, 1),
+('限时秒杀', 'https://picsum.photos/seed/seckill/100/100', 1, 2),
+('拼团优惠', 'https://picsum.photos/seed/groupbuy/100/100', 1, 3),
+('分销专区', 'https://picsum.photos/seed/distribution/100/100', 1, 4),
+('领券中心', 'https://picsum.photos/seed/coupon/100/100', 1, 5),
+('签到送礼', 'https://picsum.photos/seed/signin/100/100', 1, 6),
+('附近门店', 'https://picsum.photos/seed/store/100/100', 1, 7),
+('会员中心', 'https://picsum.photos/seed/vip/100/100', 1, 8);
 
 -- 示例商品
 INSERT INTO goods (name, category_id, subtitle, main_image, images, price, original_price, stock, sales, status, sort, is_new, is_hot, is_recommend, is_seckill, seckill_price, is_group, group_price, group_num, is_distribution, distribution_rate, detail) VALUES
