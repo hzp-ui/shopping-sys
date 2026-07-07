@@ -16,15 +16,15 @@ export const getAddressListApi = () => {
 }
 
 export const addAddressApi = (data: Omit<AddressItem, 'id'>) => {
-  return post('/user/address/add', data)
+  return post('/user/address', data)
 }
 
 export const updateAddressApi = (id: number, data: Partial<AddressItem>) => {
-  return put(`/user/address/update/${id}`, data)
+  return put(`/user/address/${id}`, data)
 }
 
 export const deleteAddressApi = (id: number) => {
-  return del(`/user/address/delete/${id}`)
+  return del(`/user/address/${id}`)
 }
 
 export const setDefaultAddressApi = (id: number) => {

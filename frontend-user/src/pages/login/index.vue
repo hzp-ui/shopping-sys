@@ -55,7 +55,7 @@
         />
       </view>
 
-      <view class="form-item code-item">
+      <view class="form-item code-item" v-if="!isLogin">
         <text class="item-label">验证码</text>
         <input
           type="number"
@@ -111,6 +111,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useUserStore } from '@/stores/user'
+import { loginApi, registerApi, sendCodeApi, getUserInfoApi } from '@/api/user'
 
 const userStore = useUserStore()
 
@@ -125,20 +126,94 @@ const form = ref({
   code: ''
 })
 
-const sendCode = () => {
+const sendCode = async () => {
   if (countdown.value > 0) return
   if (!form.value.phone || form.value.phone.length !== 11) {
     uni.showToast({ title: '请输入正确的手机号', icon: 'none' })
     return
   }
-  countdown.value = 60
-  const timer = setInterval(() => {
-    countdown.value--
-    if (countdown.value <= 0) {
-      clearInterval(timer)
+  try {
+    await sendCodeApi({ phone: form.value.phone, type: 'register' })
+    uni.showToast({ title: '验证码已发送', icon: 'success' })
+    countdown.value = 60
+    const timer = setInterval(() => {
+      countdown.value--
+      if (countdown.value <= 0) {
+        clearInterval(timer)
+      }
+    }, 1000)
+  } catch (e) {
+    console.error('发送验证码失败', e)
+  }
+}
+
+const handleLogin = async () => {
+  try {
+    const res = await loginApi({
+      phone: form.value.phone,
+      password: form.value.password
+    })
+    const token = res.data.token
+    userStore.setUserInfo({
+      id: res.data.userId,
+      phone: form.value.phone,
+      nickname: '',
+      avatar: '',
+      token: token
+    })
+    try {
+      const userInfoRes = await getUserInfoApi()
+      if (userInfoRes.data) {
+        userStore.setUserInfo({
+          ...userInfoRes.data,
+          token: token
+        })
+      }
+    } catch (e) {
+      console.error('获取用户信息失败', e)
     }
-  }, 1000)
-  uni.showToast({ title: '验证码已发送', icon: 'success' })
+    uni.showToast({ title: '登录成功', icon: 'success' })
+    setTimeout(() => {
+      uni.navigateBack()
+    }, 1500)
+  } catch (e) {
+    console.error('登录失败', e)
+  }
+}
+
+const handleRegister = async () => {
+  try {
+    const res = await registerApi({
+      phone: form.value.phone,
+      password: form.value.password,
+      code: form.value.code
+    })
+    const token = res.data.token
+    userStore.setUserInfo({
+      id: res.data.userId,
+      phone: form.value.phone,
+      nickname: '',
+      avatar: '',
+      token: token
+    })
+    try {
+      const userInfoRes = await getUserInfoApi()
+      if (userInfoRes.data) {
+        userStore.setUserInfo({
+          ...userInfoRes.data,
+          token: token
+        })
+      }
+    } catch (e) {
+      console.error('获取用户信息失败', e)
+    }
+    uni.showToast({ title: '注册成功', icon: 'success' })
+    setTimeout(() => {
+      uni.navigateBack()
+    }, 1500)
+  } catch (e) {
+    console.error('注册失败', e)
+  }
 }
 
 const handleSubmit = () => {
@@ -150,6 +225,10 @@ const handleSubmit = () => {
     uni.showToast({ title: '请输入密码', icon: 'none' })
     return
   }
+  if (form.value.password.length < 6 || form.value.password.length > 20) {
+    uni.showToast({ title: '密码长度必须在6-20位之间', icon: 'none' })
+    return
+  }
   if (!isLogin.value) {
     if (form.value.password !== form.value.confirmPassword) {
       uni.showToast({ title: '两次密码输入不一致', icon: 'none' })
@@ -159,30 +238,22 @@ const handleSubmit = () => {
       uni.showToast({ title: '请同意用户协议和隐私政策', icon: 'none' })
       return
     }
-  }
-  if (!form.value.code) {
-    uni.showToast({ title: '请输入验证码', icon: 'none' })
-    return
+    if (!form.value.code) {
+      uni.showToast({ title: '请输入验证码', icon: 'none' })
+      return
+    }
   }
 
   uni.showLoading({ title: isLogin.value ? '登录中...' : '注册中...' })
-  setTimeout(() => {
-    uni.hideLoading()
-    userStore.setUserInfo({
-      id: 10001,
-      phone: form.value.phone,
-      nickname: '云亩用户' + form.value.phone.slice(-4),
-      avatar: 'https://picsum.photos/id/1005/120/120',
-      token: 'mock-token-' + Date.now()
+  if (isLogin.value) {
+    handleLogin().finally(() => {
+      uni.hideLoading()
     })
-    uni.showToast({
-      title: isLogin.value ? '登录成功' : '注册成功',
-      icon: 'success'
+  } else {
+    handleRegister().finally(() => {
+      uni.hideLoading()
     })
-    setTimeout(() => {
-      uni.navigateBack()
-    }, 1500)
-  }, 1000)
+  }
 }
 
 const forgotPassword = () => {
